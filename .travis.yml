@@ -1,16 +1,19 @@
-sudo:                 required
-language:             node_js
+sudo: required
+language: node_js
 node_js:
 - '8'
 jobs:
   include:
-  - stage:            Build and deploy
-    script:           npm pack
-    after_deploy:     rm *.tgz
+  - stage: Build and deploy
+    script: npm pack
+    after_deploy: rm *.tgz
     deploy:
-      - provider:     releases
-        skip_cleanup: true
-        api_key:      "$GH_TOKEN"
-        file:         "*.tgz"
-        on:
-         tags:        true
+    - provider: releases
+      skip_cleanup: true
+      api_key: "$GH_TOKEN"
+      file: "*.tgz"
+      on:
+        tags: true
+env:
+  global:
+    secure: SFknWpIzKWLHHxdByxDF+Jh9/TLgQy1bjwIyDjQ+B1WBJ6Ku4ALg0AgPOKEtrXOvWwQ1278QOjFb34yRlFmdZiXmiRReBWUJ+5xpUq74q0S0aEQx7RoDAwNZgGfLnMwvY/f357lOT6ZlONDwcopkSBUWdD9R4qEOViSII9oZCElckDkW8z+f9Jymp3NRhbhdfLVq5gFDbQY8U9jfIz7rlGpVCXQmlWIq3a1VMSfZR4kbGkd8uuA6Drb8YHzJz/gw0OrkTBRPVpriUmAaGpDodD5uLbL2BiESlqPy24wPy8xgCDXvRwIPRkabisdj5vxtcJqU0NJFfg4wpUN2h2EJBaicZmv8MdmDShIu4it1b6aNlNJLdk0M+EOIK+lYu7aznJze+EpTuq2gbPLaosLaqiitxe0rEbWmoZL24LLt2SJFAKL5KB7bls25bcem1tphDNnAU/CwRun9Mp1j4ynDnqTz9A6LzhCHu+UgqHKBhhpNfAt6mbjifUSeMQWqrVKVk9qRVIj4P84yReZZ+MnE4Rtvs+eQdtcCEv8geLNb2WL3+HvShHLRz52QiK07J173TKzLmB43gSWFmgaj1lsMupP3SBi/G4S4opE8FmKEg04zg65wOZfZwhQokyh2e6mu764dcsRqK4Q+f0dClbfl5uYEQrYho0CY8W7RlZRJNKc=
