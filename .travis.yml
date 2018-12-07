@@ -1,0 +1,16 @@
+sudo:                 required
+language:             node_js
+node_js:
+- '8'
+jobs:
+  include:
+  - stage:            Build and deploy
+    script:           npm pack
+    after_deploy:     rm *.tgz
+    deploy:
+      - provider:     releases
+        skip_cleanup: true
+        api_key:      "$GH_TOKEN"
+        file:         "*.tgz"
+        on:
+         tags:        true

@@ -1,34 +1,26 @@
 {
-  "name": "@uts-eresearch/sails-hook-redbox-template",
-  "version": "1.0.0",
-  "description": "A Sails Hook Template",
+  "name": "@redboxresearchdata/redbox-hook-template",
+  "version": "0.0.1",
+  "description": "In this example template you will find the barebones requirements for a Hook",
   "main": "index.js",
-  "sails": {
-    "isHook": true,
-    "hookName": "template"
+  "directories": {
+    "test": "test"
   },
+  "dependencies": {
+    "colors": "^1.3.2"
+  },
+  "devDependencies": {},
   "scripts": {
-    "test": "NODE_ENV=test node_modules/.bin/mocha",
-    "runDev": "docker-compose -f support/development/docker-compose.yml up"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
-    "url": "git@code.research.uts.edu.au:eresearch/sails-hook-redbox-template.git"
+    "url": "git+https://github.com/redbox-mint-contrib/redbox-hook-template.git"
   },
-  "keywords": [
-    "sails",
-    "hook",
-    "redbox",
-    "provisioner"
-  ],
-  "author": "Moises Sacal",
-  "license": "GPL-3.0",
-  "devDependencies": {
-    "mocha": "^5.1.1",
-    "sails": "^1.0.2",
-    "supertest": "^3.0.0"
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/redbox-mint-contrib/redbox-hook-template/issues"
   },
-  "dependencies": {
-    "lodash": "^4.17.10"
-  }
+  "homepage": "https://github.com/redbox-mint-contrib/redbox-hook-template#readme"
 }
