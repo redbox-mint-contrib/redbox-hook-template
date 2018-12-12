@@ -1,0 +1,32 @@
+const _ = require('lodash');
+const fs = require('fs-extra');
+
+
+module.exports = function (sails) {
+  return {
+    initialize: function (cb) {
+      // Do Some initialisation tasks
+      // This can be for example: copy files or images to the redbox-portal front end
+      return cb();
+    },
+    //If each route middleware do not exist sails.lift will fail during hook.load()
+    routes: {
+      before: {},
+      after: {
+      }
+    },
+    configure: function () {
+      //If assets directory exists, there must be some assets to copy over
+      if(fs.pathExistsSync("node_modules/{{ packageName }}/assets/")) {
+        sails.log.info("Copying JCU branding");
+        fs.copySync("node_modules/{{ packageName }}/assets/","assets/");
+        fs.copySync("node_modules/{{ packageName }}/assets/",".tmp/public/");
+      }
+
+      //If assets directory exists, there must be some assets to copy over
+      if(fs.pathExistsSync("node_modules/{{ packageName }}/views/")) {
+        fs.copySync("node_modules/{{ packageName }}/views/","views/");
+      }
+    }
+  }
+};
