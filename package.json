@@ -1,6 +1,6 @@
 {
   "name": "@redboxresearchdata/redbox-hook-template",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "In this example template you will find the barebones requirements for a Hook",
   "main": "index.js",
   "directories": {

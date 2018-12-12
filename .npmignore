@@ -2,3 +2,5 @@ node_modules
 .git
 .travis.yml
 package.json
+dist
+bundleTgz.sh
