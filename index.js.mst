@@ -23,7 +23,7 @@ module.exports = function (sails) {
         fs.copySync("node_modules/{{ packageName }}/assets/",".tmp/public/");
       }
 
-      //If assets directory exists, there must be some assets to copy over
+      //If views directory exists, there must be some views to copy over
       if(fs.pathExistsSync("node_modules/{{ packageName }}/views/")) {
         fs.copySync("node_modules/{{ packageName }}/views/","views/");
       }

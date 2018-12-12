@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "NODE_ENV=test node_modules/.bin/mocha",
-    "installHook": "docker-compose -f support/development/docker-compose.yml run redboxportal /bin/bash -c 'cd /opt/redbox-portal;yarn add  \"file:/opt/sailshook\";' ",
+    "installHook": "docker run -v $(pwd):/opt/sailshook qcifengineering/redbox-portal /bin/bash -c 'cd /opt/redbox-portal;yarn add  \"file:/opt/sailshook\"'; docker commit $(docker ps -lq) redboxportalwithhook",
     "runDev": "docker-compose -f support/development/docker-compose.yml up",
     "runAngularDev": "docker-compose -f support/development/docker-compose.yml up | source support/development/monitorSailsWorkingDir.sh sailsWorkingDir"
   },

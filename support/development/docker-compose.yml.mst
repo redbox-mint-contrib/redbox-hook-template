@@ -7,7 +7,7 @@ services:
     ports:
        - "1500:1500"
     volumes:
-       - "../../:/opt/sailshook"
+       - "../../:/opt/redbox-portal/node_modules/{{ packageName }}"
        - "../../sailsWorkingDir/tmp:/opt/redbox-portal/.tmp"
     expose:
        - "1500"
